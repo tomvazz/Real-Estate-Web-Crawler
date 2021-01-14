@@ -57,7 +57,8 @@ def store_values(address_list, city_list, state_list, price_list, size_list, bed
     mycursor.execute(f"SELECT * FROM price_history")
     for x in mycursor:
         print(x)
-
+    
+    # mySql script finds each house that matched a previously searched house and returns only those houses that have changed in price
     print("")
     print("price changes")
     mycursor.execute("SELECT * FROM (SELECT house_id, date_entered, address, price, count(*)"
